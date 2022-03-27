@@ -16,8 +16,9 @@ async def new_client(client_socket: websockets.WebSocketClientProtocol, path: st
 
     while True:
         new_message = await client_socket.recv()
-        #print("New message", new_message)
+        print("New message", new_message)
         if new_message != "":
+            print('RECIVED')
             await send_message(message=new_message)
 
 async def start_server():
