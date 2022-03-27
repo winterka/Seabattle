@@ -2750,10 +2750,8 @@ br.important {
   align-items: center;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  margin: 0 -10px;
 }
 
-.header__button,
 .header__button__signin,
 .header__button__reg {
   display: -webkit-box;
