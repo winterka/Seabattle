@@ -21,7 +21,7 @@ document.addEventListener(
           const data = Object.fromEntries(arrData);
 
           console.log(data);
-          websocketClient.send(JSON.stringify(data));
+          websocketClient.send(data);
 
           location.reload();
         },
