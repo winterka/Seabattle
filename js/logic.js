@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const messageInput = document.querySelector('[name=message_input]')
     const sendMessageButton = document.querySelector('[name=send]')
 
-    let websocketClient = new WebSocket("31.31.196.220:12345")
+    let websocketClient = new WebSocket("ws://127.0.0.1:8080")
 
     websocketClient.onopen=() => {
          sendMessageButton.onclick=()=>{

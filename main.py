@@ -21,7 +21,7 @@ async def new_client(client_socket: websockets.WebSocketClientProtocol, path: st
             await send_message(message=new_message)
 
 async def start_server():
-    await websockets.serve(new_client, '31.31.196.220', 12345)
+    await websockets.serve(new_client, '127.0.0.1', 8080)
 
 
 if __name__ == '__main__':
