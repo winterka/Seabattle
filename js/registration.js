@@ -9,7 +9,7 @@ document.addEventListener(
       form.addEventListener(
         "submit",
         (e) => {
-          // e.preventDefault();
+          e.preventDefault();
 
           const arrData = [];
           const formData = new FormData(form);
@@ -23,7 +23,7 @@ document.addEventListener(
           console.log(data);
           websocketClient.send(JSON.stringify(data));
 
-          // location.reload();
+          location.reload();
         },
         false
       );
