@@ -1,27 +1,30 @@
 document.addEventListener(
   "DOMContentLoaded",
-  () => {
-    const nameInput = document.querySelector(`[name="name"]`);
-    const telInput = document.querySelector(`[name="tel"]`);
-    const emailInput = document.querySelector(`[name="email"]`);
-    const passwordInput = document.querySelector(`[name="password"]`);
+  function () {
+    const form = document.getElementById("regForm");
 
     let websocketClient = new WebSocket("ws://127.0.0.1:8080");
 
     websocketClient.onopen = () => {
-      form1.onsubmit = (e) => {
-        e.preventDefault();
-        const data = {
-          name: nameInput.value,
-          tel: telInput.value,
-          email: emailInput.value,
-          password: passwordInput.value,
-        };
+      form.addEventListener(
+        "submit",
+        (e) => {
+          e.preventDefault();
 
-        console.log(data);
-        websocketClient.send(data);
-        // messageInput.value = "";
-      };
+          const formData = new FormData(form);
+
+          const data = {
+            name: formData.get("name"),
+            tel: formData.get("tel"),
+            email: formData.get("email"),
+            password: formData.get("password"),
+          };
+
+          console.log(data);
+          websocketClient.send(JSON.stringify(data));
+        },
+        false
+      );
     };
   },
   false
