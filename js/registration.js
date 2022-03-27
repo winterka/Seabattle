@@ -11,14 +11,14 @@ document.addEventListener(
         (e) => {
           e.preventDefault();
 
+          const arrData = [];
           const formData = new FormData(form);
 
-          const data = {
-            name: formData.get("name"),
-            tel: formData.get("tel"),
-            email: formData.get("email"),
-            password: formData.get("password"),
-          };
+          for (const pair of formData.entries()) {
+            arrData.push([pair[0], pair[1]]);
+          }
+
+          const data = Object.fromEntries(arrData);
 
           console.log(data);
           websocketClient.send(JSON.stringify(data));
