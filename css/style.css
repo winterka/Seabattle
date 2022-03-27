@@ -2750,9 +2750,12 @@ br.important {
   align-items: center;
   -webkit-box-pack: justify;
   justify-content: space-between;
+  margin: 0 -10px;
 }
 
-.header__button {
+.header__button,
+.header__button__signin,
+.header__button__reg {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -2769,8 +2772,13 @@ br.important {
   background: #fff;
   border-color: #fff;
   color: #000;
+  margin: 0 10px;
 }
 
 .control__input {
   padding-top: 3%;
+}
+
+.header__button__signin {
+  margin-left: auto;
 }
